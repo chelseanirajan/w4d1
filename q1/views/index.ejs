@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Add Cookie</h1>
+    <div class="add-cookie">
+      <form action="/addCookie" method="POST">
+        <label for="">Key</label>
+        <input type="text" name="key" />
+        <label for="">Value</label>
+        <input type="text" name="value" />
+        <input type="submit" value="Add Cookie" />
+      </form>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>Key</th>
+          <th>value</th>
+        </tr>
+
+        <% if(cok.length>0) { for(let cook of cok) {%>
+        <tr>
+          <td><%= cook.key%></td>
+          <td><%= cook.value%></td>
+        </tr>
+        <%} } else {%>
+        <h2>No cookies found</h2>
+        <%}%>
+      </table>
+    </div>
+  </body>
+</html>
